@@ -1,0 +1,71 @@
+"text"
+"### Query: Write AND between two boolean expressions A, B and then OR that boolean expression to C.
+### Expression: (A and B) or C"
+"### Query: Write boolean expression to check equality of two integers 9 and 6.
+### Expression: 9 == 6"
+"### Query: Write boolean expression to check inequality of two integers 34 and 61.
+### Expression: 34 <> 61"
+"### Query: Write ""Hello World!"" text as expression
+### Expression: ""Hello World!"""
+"### Query: Write It is a beautiful day text as expression
+### Expression: ""It is a beautiful day"""
+"### Query: Write simple field reference to field 'Prop1'
+### Expression: Primary.Prop1"
+"### Query: Write Primary page field reference to page field 'Prop1' (remember Primary keyword is case sensative)
+### Expression: Primary.Prop1"
+"### Query: Write reference to page list 'PageList1' at index 9
+### Expression: .PageList1[9]"
+"### Query: Write skip stage automation expression
+### Expression: Primary@Automation:SkipStage()"
+"### Query: Get length of the text in a text field 'TField'
+### Expression: Text@Function:Length(Primary.TField)"
+"### Query: Concatenate two texts ""Pega"" and ""Launchpad"" 
+### Expression: ""Pega"" + ""Launcpad"""
+"### Query: 5 modulus -2
+### Expression: 5 % -2"
+"### Query: Add 2 and 3, then multiply 6. Use parenthesis properly.
+### Expression: (2 + 3) * 6"
+"### Query: Add values of two integer fields 'TField1' & 'TField2'.
+### Expresson: Primary.TField1 + Primary.TField2"
+"### Query: Check if value of 'TField' is greater than equal to 5
+### Expression: Primary.TField >= 5"
+"### Query: Check if 2023 is less than the value of field 'XYZ'
+### Expression: 2023 < Primary.XYZ"
+"### Query: Check if 678 is equal to 567
+### Exression: 678 == 567"
+"### Query: Check if 1999 is not equal to the field 'ABC'
+### Expression: 1999 <> Primary.ABC"
+"### Query: Write a boolean expression to check if 'Flag' is true and 'Count' is greater than 10.
+### Expression: Primary.Flag and Primary.Count > 10"
+"### Query: Create a string by concatenating 'FirstName' and 'LastName' fields.
+### Expression: Primary.FirstName + "" "" + Primary.LastName"
+"### Query: Calculate the product of two decimal numbers 'Price' and 'Quantity'.
+### Expression: Primary.Price * Primary.Quantity"
+"### Query: Check if 'Status' is not equal to ""Completed"".
+### Expression: Primary.Status <> ""Completed"""
+"### Query: Write a boolean expression to validate if 'Age' is less than 18 or 'Permission' is true.
+### Expression: Primary.Age < 18 or Primary.Permission"
+"### Query: Calculate the average of 'Score1' and 'Score2'.
+### Expression: (Primary.Score1 + Primary.Score2) / 2"
+"### Query: Create a string with the text ""Hello, "" followed by the 'UserName' field.
+### Expression: ""Hello, "" + Primary.UserName"
+"### Query: Check if 'Price' is greater than or equal to 100 and 'Discount' is not equal to 0.
+### Expression: Primary.Price >= 100 and Primary.Discount <> 0"
+"### Query: Write a boolean expression to check if 'Category' is either ""A"" or ""B"".
+### Expression: Primary.Category == ""A"" or Primary.Category == ""B"""
+"### Query: Subtract 'EndYear' from 'StartYear' to calculate the year span.
+### Expression: Primary.StartYear - Primary.EndYear"
+"### Query: Concatenate the values of 'Value1', 'Value2', and 'Value3' fields.
+### Expression: Primary.Value1 + Primary.Value2 + Primary.Value3"
+"### Query: Check if 'Income' is greater than 50000 or 'HasDegree' is true.
+### Expression: Primary.Income > 50000 or Primary.HasDegree"
+"### Query: Write a boolean expression to check if 'Temperature' is less than 32 and 'Weather' is ""Snowy"".
+### Expression: Primary.Temperature < 32 and Primary.Weather == ""Snowy"""
+"### Query: Check if 'IsEnabled' is true and 'Role' is not ""Admin"".
+### Expression: Primary.IsEnabled and Primary.Role <> ""Admin"""
+"### Query: Calculate the product of 'Value' and 2, then subtract 10.
+### Expression: (Primary.Value * 2) - 10"
+"### Query: Write a boolean expression to check if 'Priority' is ""High"" or ""Medium"".
+### Expression: Primary.Priority == ""High"" or Primary.Priority == ""Medium"""
+"### Query: Get the length of the 'Description' field.
+### Expression: Text@Function:Length(Primary.Description)"
