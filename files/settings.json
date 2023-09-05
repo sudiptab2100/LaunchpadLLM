@@ -3,5 +3,6 @@
     "embeddings": {
         "model_id": "sentence-transformers/all-MiniLM-L6-v2",
         "vectors_file": "vectors.csv"
-    }
+    },
+    "model": "model.bin"
 }

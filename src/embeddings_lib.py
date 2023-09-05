@@ -38,9 +38,11 @@ def data_vectors(texts, store=True):
     else: return response
 
 # Search top 'k' similar examples of query in dataset embeddings
-def search_similar(query, dataset_embeddings, k):
-    query_vectors = data_vectors([query])
+def search_similar(query, k):
+    query_vectors = data_vectors([query], False)
+    query_vectors = torch.FloatTensor(query_vectors)
     dataset_embeddings = read_as_csv(vectors_file)
+    dataset_embeddings = torch.from_numpy(dataset_embeddings.to_numpy()).to(torch.float)
     hits = semantic_search(query_vectors, dataset_embeddings, top_k=k)
     idxs = [] # store indexes of the texts
     for _ in hits:
