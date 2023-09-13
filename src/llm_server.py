@@ -18,9 +18,17 @@ async def create_item(item: MSG):
     similar_texts = get_data_texts(idxs)
     
     # 'prompt_q' is the prompt that will be sent to the LLM model
-    prompt_q = "You're a AI expression generator who uses it's own knowledge and '### Query' & '### Expression' examples below to generate appropiate 'expresion' for the given 'query'. Return 'FAILED' if unable to generate correct 'expression' for the given query.\n\n"
+    '''
+    Prompt Format:
+        [INST] <<SYS>>
+        You're a AI expression generator who uses it's own knowledge and '### Query' & '### Expression' examples below to generate appropiate 'expresion' for the given 'query'. Return 'FAILED' if unable to generate correct 'expression' for the given query.Not equal to sign is '<>'.
+        <</SYS>>
+        
+        {INPUT} [/INST]
+    '''
+    prompt_q = "[INST] <<SYS>>\nYou're a AI expression generator who uses it's own knowledge and '### Query' & '### Expression' examples below to generate appropiate 'expresion' for the given 'query'. Return 'FAILED' if unable to generate correct 'expression' for the given query.Not equal to sign is '<>'.\n<</SYS>>\n\n"
     for _ in similar_texts: prompt_q += _ + '\n'
-    prompt_q += query # Final prompt
+    prompt_q += query + "[/INST]" # Final prompt
     print(f"Prompt:\n{prompt_q}")
     
     result = chain.run(prompt_q)

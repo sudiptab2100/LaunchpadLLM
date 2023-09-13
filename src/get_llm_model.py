@@ -11,7 +11,7 @@ with open('files/settings.json') as f:
 model_path = f"files/{settings['model']}"
 
 def get_model():
-    n_gpu_layers = 40
+    n_gpu_layers = 0
     n_batch = 512
     callback_manager = CallbackManager([StreamingStdOutCallbackHandler()])
     
