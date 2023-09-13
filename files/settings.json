@@ -2,6 +2,7 @@
     "data_file": "data.csv",
     "embeddings": {
         "model_id": "sentence-transformers/all-MiniLM-L6-v2",
+        "local_model": "all-MiniLM-L6-v2",
         "vectors_file": "vectors.csv"
     },
     "model": "speechless-llama2-hermes-orca-platypus-wizardlm-13b.Q5_K_M.gguf"

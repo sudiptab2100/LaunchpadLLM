@@ -1,12 +1,18 @@
 from embeddings_lib import search_similar, get_data_texts, read_as_csv
 from get_llm_model import get_model
+from get_embed_model import embed_model
 from fastapi import FastAPI
 from pydantic import BaseModel
 import uvicorn
+import json
 
+
+with open('files/settings.json') as f:
+    settings = json.load(f)
 
 app = FastAPI()
 chain = get_model()
+embed = embed_model(f"files/{settings['embeddings']['local_model']}")
 
 class MSG(BaseModel):
     msg: str
@@ -14,7 +20,7 @@ class MSG(BaseModel):
 @app.post("/chat/")
 async def create_item(item: MSG):
     query = f"### Query: {item.msg}\n### Expression: "
-    idxs = search_similar(query, 10)
+    idxs = search_similar(query, embed, 10)
     similar_texts = get_data_texts(idxs)
     
     # 'prompt_q' is the prompt that will be sent to the LLM model
